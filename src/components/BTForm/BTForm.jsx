@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import DanhSachSV from './DanhSachSV'
-import FromDangKy from './FromDangKy'
+import FormDangKy from './FormDangKy'
 
-export default class BTFrom extends Component {
+export default class BTForm extends Component {
     render() {
         return (
             <div className='max-w-7xl m-auto'>
-                <FromDangKy />
+                <FormDangKy />
                 <DanhSachSV />
             </div>
         )

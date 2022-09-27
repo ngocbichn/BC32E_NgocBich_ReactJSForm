@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import BTFrom from './components/BTForm/BTFrom';
+import BTForm from './components/BTForm/BTForm';
 
 function App() {
   return (
     <div>
-      <BTFrom />
+      <BTForm />
     </div>
   );
 }

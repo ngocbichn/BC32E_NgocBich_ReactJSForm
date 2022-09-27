@@ -1,27 +1,50 @@
 const stateDefault = {
-    mangNguoiDung: [
+    mangSV: [
         // {
-        //     id: 12345,
-        //     username: 'ngocbich',
-        //     fullName: 'Ngoc Bich',
-        //     email: 'acb@gmail.com',
-        //     phoneNumber: 1234567890,
-        //     type: 'admin',
+        //     maSV: 20,
+        //     name: 'Ngoc Bich',
+        //     phoneNumber: '12345',
+        //     email: 'ngocbich@gmail.com',
         // },
         // {
-        //     id: 56789,
-        //     username: 'nick183',
-        //     fullName: 'Nick',
-        //     email: 'acb@gmail.com',
-        //     phoneNumber: 1357924680,
-        //     type: 'client',
+        //     maSV: 23,
+        //     name: 'Nick',
+        //     phoneNumber: '67890',
+        //     email: 'nick@gmail.com',
         // }
     ],
-    // selectedUser: null
+    selectedUser: null
 }
 
-export const baiTapQuanLyNguoiDung = (state = stateDefault, { type, payload }) => {
+export const BTForm = (state = stateDefault, { type, payload }) => {
     switch (type) {
+        case 'ADD_USER': {
+            const data = [...state.mangSV]
+            const user = { ...payload, id: Date.now() }
+            // console.log(user);
+            data.push(user)
+            return { ...state, mangSV: data }
+        }
+        case 'DELETE_USER': {
+            const data = state.mangSV.filter(item => item.id !== payload)
+            return { ...state, mangSV: data }
+        }
+        case 'EDIT_USER': {
+            const user = state.mangSV.find(item => item.id === payload)
+            return { ...state, selectedUser: user }
+        }
+        case 'UPDATE_USER': {
+            // const newUserList = state.mangNguoiDung.map((item) => {
+            //     if (item.id === payload.id) {
+            //         return payload
+            //     }
+            //     return item
+            // })
+            const newUserList = state.mangSV.map((item) => item.id === payload.id ? payload : item)
+
+            state.selectedUser = null
+            return { ...state, mangSV: newUserList }
+        }
 
         default: return state
     }
