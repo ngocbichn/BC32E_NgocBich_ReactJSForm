@@ -80,10 +80,10 @@ class FormDangKy extends Component {
         return (
             <div>
                 <form id='form' noValidate onSubmit={this.handleSubmit}>
-                    <div className='bg-black-500p-5 bg-gray-800 text-white text-2xl font-bold p-12'>Thông tin sinh viên</div>
-                    <div className='grid grid-cols-2 gap-5 mt-10'>
+                    <div className='bg-black-500p-5 bg-gray-800 text-white text-2xl font-bold p-3'>Thông tin sinh viên</div>
+                    <div className='grid grid-cols-2 gap-5 mt-5'>
                         <div>
-                            <p className='font-semibold'>Mã SV</p>
+                            <p className='font-semibold text-18'>Mã SV</p>
                             <input
                                 required
                                 type='number'
@@ -93,14 +93,14 @@ class FormDangKy extends Component {
                                 name='maSV'
                                 title='Mã SV'
                                 placeholder='Mã SV'
-                                className="rounded-sm p-3 w-full mt-4 border-2 border-black"
+                                className="rounded-sm p-2 w-full mt-2 border-2 border-black"
                                 onChange={this.handleState}
                                 onBlur={this.handleBlur}
                             />
                             <span className='text-red-500 text-14'>{this.state.errors.maSV}</span>
                         </div>
                         <div>
-                            <p className='font-semibold'>Họ tên</p>
+                            <p className='font-semibold text-18'>Họ tên</p>
                             <input
                                 required
                                 type='text'
@@ -108,14 +108,14 @@ class FormDangKy extends Component {
                                 name='name'
                                 title='Họ tên'
                                 placeholder='Họ tên'
-                                className="rounded-sm p-3 w-full mt-4 border-2 border-black"
+                                className="rounded-sm p-2 w-full mt-2 border-2 border-black"
                                 onChange={this.handleState}
                                 onBlur={this.handleBlur}
                             />
                             <span className='text-red-500 text-14'>{this.state.errors.name}</span>
                         </div>
                         <div>
-                            <p className='font-semibold'>Số điện thoại</p>
+                            <p className='font-semibold text-18'>Số điện thoại</p>
                             <input
                                 required
                                 type='number'
@@ -123,14 +123,14 @@ class FormDangKy extends Component {
                                 name='phoneNumber'
                                 title='Số điện thoại'
                                 placeholder='Số điện thoại'
-                                className="rounded-sm p-3 w-full mt-4 border-2 border-black"
+                                className="rounded-sm p-2 w-full mt-2 border-2 border-black"
                                 onChange={this.handleState}
                                 onBlur={this.handleBlur}
                             />
                             <span className='text-red-500 text-14'>{this.state.errors.phoneNumber}</span>
                         </div>
                         <div>
-                            <p className='font-semibold'>Email</p>
+                            <p className='font-semibold text-18'>Email</p>
                             <input
                                 required
                                 type='email'
@@ -139,7 +139,7 @@ class FormDangKy extends Component {
                                 title='Email'
                                 placeholder='Email'
                                 pattern='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
-                                className="rounded-sm p-3 w-full mt-4 border-2 border-black"
+                                className="rounded-sm p-2 w-full mt-2 border-2 border-black"
                                 onChange={this.handleState}
                                 onBlur={this.handleBlur}
                             />
@@ -149,11 +149,11 @@ class FormDangKy extends Component {
                     <div className='mt-5 flex justify-center'>
                         <button
                             type='submit'
-                            className='p-4 bg-blue-400 rounded-md text-white text-xl cursor-pointer hover:bg-blue-700 mr-5'>
+                            className='p-3 bg-blue-400 rounded-md text-white text-xl cursor-pointer hover:bg-blue-700 mr-5'>
                             Đăng ký</button>
                         <button
                             type='submit'
-                            className='p-4 bg-yellow-400 rounded-md text-white text-xl cursor-pointer hover:bg-yellow-700 mr-5 '>Cập nhật</button>
+                            className='p-3 bg-yellow-400 rounded-md text-white text-xl cursor-pointer hover:bg-yellow-700 mr-5 '>Cập nhật</button>
                         {/* <button type='reset' className='p-4 bg-cyan-400 rounded-md text-white text-xl cursor-pointer hover:bg-cyan-700'>Reset</button> */}
                     </div>
                 </form>
